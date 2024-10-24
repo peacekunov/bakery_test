@@ -1,0 +1,8 @@
+<form [formGroup]="bakingForm" (submit)="bake()">
+    <label for="first-name">Количество</label>
+    <input id="bunCount" type="number" formControlName="bunCount" [ngClass]="{'is-invalid': bakingForm.get('bunCount')!.invalid && bakingForm.get('bunCount')!.touched}" />
+    <button type="submit" class="primary">Испечь</button>
+    <div *ngIf="bakingForm.get('bunCount')!.invalid && bakingForm.get('bunCount')!.touched" class="invalid-feedback">
+        Введите число от 1 до 1000
+    </div>
+</form>

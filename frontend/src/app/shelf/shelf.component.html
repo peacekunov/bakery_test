@@ -1,0 +1,20 @@
+<table class="table table-bordered table-striped">
+  <thead class="thead-light">
+    <tr>
+      <th>Тип булочки</th>
+      <th>Начальная цена</th>
+      <th>Текущая цена</th>
+      <th>Прогноз цены</th>
+      <th>Цена изменится через</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bun of buns">
+      <td>{{ bun.type }}</td>
+      <td>{{ bun.initialPrice.toFixed(2) }}</td>
+      <td>{{ bun.currentPrice.toFixed(2) }}</td>
+      <td>{{ bun.willBeThrownOut ? 'Будет выкинута' : bun.nextPrice.toFixed(2) }}</td>
+      <td>{{ bun.timeUntilPriceChange.split('.')[0] }}</td>
+    </tr>
+  </tbody>
+</table>
